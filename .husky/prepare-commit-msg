@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# gitmoji as a commit hook
+if pnpm -v >&/dev/null
+then
+  exec < /dev/tty
+  pnpm exec gitmoji --hook $1 $2
+else
+  exec < /dev/tty
+  gitmoji --hook $1 $2
+fi
