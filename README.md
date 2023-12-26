@@ -105,16 +105,16 @@ The easiest way to run this project locally is to run the following command in y
 
 ```bash
 # npm 6.x
-npm create astro@latest --template wry-red/site
+npm create astro@latest --template wry-red/site#master
 
 # npm 7+, extra double-dash is needed:
-npm create astro@latest -- --template wry-red/site
+npm create astro@latest -- --template wry-red/site#master
 
 # yarn
-yarn create astro --template wry-red/site
+yarn create astro --template wry-red/site#master
 
 # pnpm
-pnpm create astro@latest --template wry-red/site
+pnpm create astro@latest --template wry-red/site#master
 ```
 
 ## Google Site Verification (optional)
