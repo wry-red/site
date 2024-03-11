@@ -1,0 +1,42 @@
+---
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import Layout from "@layouts/Layout.astro";
+import Video from "@components/albums/Video.astro";
+import type { CollectionEntry } from "astro:content";
+import { slugifyStr } from "@utils/slugify";
+import { SITE } from "@config";
+import Desc from "@components/albums/Description.astro";
+import Gallery from "@components/albums/Gallery.astro";
+
+export interface Props {
+  album: CollectionEntry<"album">;
+}
+
+const { album } = Astro.props;
+
+const {title, images, desc, videoUrl} = album.data;
+
+const {Content} = await album.render();
+---
+
+<Layout title={`${album.data.title} | ${SITE.title}`}>
+  <Header activeNav="about" />
+  <main id="main-content">
+    <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
+      <h1 class="text-2xl tracking-wider sm:text-3xl">{album.data.title}</h1>
+
+      <!-- this is the top part of the page -->
+      <div class="upperBlock">
+        <!-- show the video of this kind of animal -->
+        <Video videoUrl={album.data.videoUrl} />
+        <Desc desc={album.data.desc} />
+      </div>
+
+      <div class="bottomBlock">
+        <Gallery images={album.data.images}/>
+        </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

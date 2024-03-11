@@ -1,0 +1,21 @@
+---
+// Short description of the item. 
+
+export interface Props {
+    desc: string;
+}
+
+const { desc } = Astro.props;
+---
+
+<p class="description">
+    ${desc}
+</p>
+
+<style>
+    .description {
+        font-family:cursive;
+        font-size:18px;
+        color:#333;
+    }
+</style>

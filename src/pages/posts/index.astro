@@ -8,8 +8,9 @@ import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
 
+// this function returns posts order by time.
 const sortedPosts = getSortedPosts(posts);
-
+// get the total page number which calculated by number of posts divide posts per page
 const totalPages = getPageNumbers(sortedPosts.length);
 
 const paginatedPosts = sortedPosts.slice(0, SITE.postPerPage);

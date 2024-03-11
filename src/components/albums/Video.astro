@@ -1,0 +1,12 @@
+---
+// Video of this item, always from bilibili.
+export interface Props {
+    videoUrl: string;
+}
+
+const { videoUrl } = Astro.props;
+---
+
+<p>
+    <iframe src=`${videoUrl}` allowfullscreen="true"/>
+</p>

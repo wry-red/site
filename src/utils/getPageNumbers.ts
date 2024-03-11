@@ -1,3 +1,6 @@
+// This function receive the number of the total posts and return the number of pages,
+// which calculated from total posts divide a const variable, postPerPage.
+
 import { SITE } from "@config";
 
 const getPageNumbers = (numberOfPosts: number) => {

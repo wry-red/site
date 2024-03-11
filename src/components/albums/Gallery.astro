@@ -1,0 +1,49 @@
+---
+// Pictures of this kind of item.
+
+export interface Props {
+  images: string[];
+}
+
+const { images } = Astro.props;
+
+const rowLength = 5; // Set the desired row length
+
+// Split the imageUrls into rows
+const imageRows = [];
+for (let i = 0; i < images.length; i += rowLength) {
+  const rowImages = images.slice(i, i + rowLength);
+  imageRows.push(rowImages);
+}
+---
+
+<div class="image-matrix">
+  {
+    imageRows.map((row, rowIndex) => (
+      <div class="image-row">
+        {row.map((imageUrl, imageIndex) => (
+          <img src={imageUrl} alt={`Image ${rowIndex}-${imageIndex}`} />
+        ))}
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .image-matrix {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .gallery-image {
+    flex: 0 0 auto;
+    margin: 5px;
+    max-width: calc(100% / 5 - 10px); /* 减去左右两边的 margin */
+    height: auto;
+  }
+</style>

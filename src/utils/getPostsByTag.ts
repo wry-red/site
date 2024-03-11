@@ -1,3 +1,5 @@
+// A filter to get blogs with specific tag from a blog list.
+
 import { slugifyAll } from "./slugify";
 import type { CollectionEntry } from "astro:content";
 

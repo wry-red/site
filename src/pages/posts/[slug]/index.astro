@@ -11,6 +11,7 @@ export interface Props {
   post: CollectionEntry<"blog">;
 }
 
+// getStaticPaths is the essential function for url mapping
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
 
