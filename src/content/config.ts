@@ -28,7 +28,6 @@ const album = defineCollection({
     author: z.string().default(SITE.author),
     pubDatetime: z.date(),
     title: z.string(),
-    desc: z.string(),
     videoUrl: z.string(),
     images: z.array(z.string()),
     ogImage: image()

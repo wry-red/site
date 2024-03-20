@@ -15,8 +15,6 @@ export interface Props {
 
 const { album } = Astro.props;
 
-const {title, images, desc, videoUrl} = album.data;
-
 const {Content} = await album.render();
 ---
 
@@ -27,16 +25,23 @@ const {Content} = await album.render();
       <h1 class="text-2xl tracking-wider sm:text-3xl">{album.data.title}</h1>
 
       <!-- this is the top part of the page -->
-      <div class="upperBlock">
+      <div class="upper-block">
         <!-- show the video of this kind of animal -->
         <Video videoUrl={album.data.videoUrl} />
-        <Desc desc={album.data.desc} />
+        <Desc desc={album.data.description} />
       </div>
 
-      <div class="bottomBlock">
+      <div class="bottom-block">
         <Gallery images={album.data.images}/>
         </div>
     </section>
   </main>
   <Footer />
 </Layout>
+
+<style>
+  .upper-block {
+    display: flex;
+    border: 20px;
+  }
+</style>
