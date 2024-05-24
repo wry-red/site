@@ -3,12 +3,6 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 import typography from "@tailwindcss/typography";
 import scrollbar from "tailwind-scrollbar";
 
-const 
-sans= ["Noto Sans", "Noto Sans SC", "Noto Color Emoji", ...fontFamily.sans],
-serif= ["Noto Serif", "Noto Serif SC", "Noto Color Emoji", ...fontFamily.serif],
-mono= ["Noto Sans Mono", "Noto Sans SC", "Noto Color Emoji", ...fontFamily.mono],
-skin = mono;
-
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}", "./astro.config.ts"],
   theme: {
@@ -64,10 +58,7 @@ export default {
         transparent: "transparent",
       },
       fontFamily: {
-        skin,
-				sans,
-				serif,
-        mono,
+        skin: ["Noto Sans Mono", "Noto Color Emoji", ...fontFamily.mono],
       },
       typography: {
         DEFAULT: {
