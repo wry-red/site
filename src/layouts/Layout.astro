@@ -28,6 +28,8 @@ const {
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.url.origin).href;
+const webFont =
+  "https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans+Mono:wght@100..900&display=swap";
 ---
 
 <!doctype html>
@@ -101,9 +103,15 @@ const socialImageURL = new URL(ogImage, Astro.url.origin).href;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
+      href={webFont}
+      media="print"
+      onload="this.onload=null;this.removeAttribute('media');"
+      fetchpriority="high"
     />
+    <noscript>
+      <link rel="stylesheet" href={webFont} />
+    </noscript>
 
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
