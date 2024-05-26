@@ -12,6 +12,10 @@ The code and design are directly derived from [Sat Naing](https://satnaing.dev) 
 
 This theme is written in vanilla TypeScript for SSG and a sprinkling of client-side JavaScript and libraries to add some interactions for a better experience when navigating the site. TailwindCSS is used for styling and Markdown for blog content. While not thoroughly tested, the site works mostly fine with JavaScript disabled.
 
+## 📊 PageSpeed Insights
+
+![PageSpeed Insights](./psi.svg)
+
 ## 🔥 Features
 
 - [x] type-safe markdown
