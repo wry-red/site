@@ -5,7 +5,7 @@ import Hr from "@/components/Hr.astro";
 import LinkButton from "@/components/LinkButton.astro";
 
 export interface Props {
-  readonly activeNav?: "posts" | "tags" | "about" | "search";
+  readonly activeNav?: "posts" | "tags" | "albums" | "about" | "search";
 }
 
 const { activeNav } = Astro.props;
@@ -82,6 +82,19 @@ const { activeNav } = Astro.props;
               title="Tags"
             >
               Tags
+            </LinkButton>
+          </li>
+          <li class="col-span-2">
+            <LinkButton
+              href="/albums/"
+              class:list={{
+                "underline decoration-wavy decoration-2 underline-offset-4":
+                  activeNav === "albums",
+              }}
+              ariaLabel="albums"
+              title="Albums"
+            >
+              Albums
             </LinkButton>
           </li>
           <li class="col-span-2">
