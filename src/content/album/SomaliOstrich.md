@@ -1,6 +1,6 @@
 ---
-url: "//player.bilibili.com/player.html?aid=750062778&bvid=BV1pC4y1M74B&cid=1374604879&p=1"
-mediaType: video
+url: "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/151455791/160"
+mediaType: pic
 title: "Goldcrest: kind of lovely bird"
 sciName: Regulus regulus
 cnName: 戴菊

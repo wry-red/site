@@ -1,3 +1,6 @@
+// If you change the structure of any frontmatter, run `npm run astro build sync` or any else
+// command to sync frontmatter type.
+
 import { SITE } from "@config";
 import { defineCollection, z } from "astro:content";
 
@@ -28,7 +31,11 @@ const album = defineCollection({
     author: z.string().default(SITE.author),
     pubDatetime: z.date(),
     title: z.string(),
-    videoUrl: z.string(),
+    sciName: z.string(),
+    cnName: z.string(),
+    comName: z.string(),
+    url: z.string(),
+    mediaType: z.string(),
     images: z.array(z.string()),
     ogImage: image()
       .refine(img => img.width >= 1200 && img.height >= 630, {
