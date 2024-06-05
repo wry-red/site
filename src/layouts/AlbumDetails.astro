@@ -1,0 +1,61 @@
+---
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import Layout from "@/layouts/Layout.astro";
+import Gallery from "@/components/albums/Gallery.astro";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@/config";
+
+export interface Props {
+  album: CollectionEntry<"album">;
+}
+
+const { album } = Astro.props;
+const { Content } = await album.render();
+---
+
+<Layout title={`${album.data.title} | ${SITE.title}`}>
+  <Header activeNav="about" />
+  <main id="main-content">
+    <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
+      <h1 class="m-4 text-2xl tracking-wider sm:text-3xl">
+        {album.data.title}
+      </h1>
+      <div class="upper-block flex-col sm:flex-wrap">
+        <div class="vision-info flex-wrap sm:flex m-2">
+          {
+            album.data.mediaType === "video" ? (
+              <iframe
+                class="species-video m-4"
+                src={album.data.url}
+                allowfullscreen="true"
+              />
+            ) : (
+              <img
+                class="species-image m4"
+                data-image-lazy="true"
+                src={album.data.url}
+                data-image-loaded="true"
+                alt={album.data.comName}
+              />
+            )
+          }
+          <div class="basic-info flex-col flex items-left p-5 gap-y-3">
+            <p class="cn-name m-1 text-xl">{album.data.cnName}</p>
+            <p class="com-name m-1 text-xl">{album.data.comName}</p>
+            <p class="sci-name m-1 italic text-xl">{album.data.sciName}</p>
+          </div>
+        </div>
+        <p class="description m-3">
+          {album.data.description}
+        </p>
+      </div>
+
+      <div class="bottom-block">
+        <Content />
+        <Gallery images={album.data.images} />
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

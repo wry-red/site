@@ -1,0 +1,23 @@
+---
+import systemTree from "./avianSystemTree.json";
+import Albums from "@/layouts/Albums.astro";
+
+interface TreeNode {
+  taxonCode: string;
+  category: string;
+  taxonOrder: number;
+  sciName: string;
+  comName: string;
+  cnName: string;
+  iucnStatus: string;
+  illusAssetId: string;
+  missingFromEbird: boolean;
+  assetId: number;
+  subTaxa?: TreeNode[];
+}
+const tree: Object = systemTree as Object;
+
+const phylogeneticTree: TreeNode = tree as TreeNode;
+---
+
+<Albums tree={phylogeneticTree} />

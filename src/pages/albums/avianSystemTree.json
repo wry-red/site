@@ -1,0 +1,144 @@
+{
+  "taxonCode": "classAves",
+  "category": "class",
+  "subTaxa": [
+    {
+      "taxonCode": "orderStruthioniformes",
+      "category": "order",
+      "taxonOrder": 1.0,
+      "sciName": "Struthioniformes",
+      "comName": "Struthioniformes",
+      "cnName": "测试目",
+      "subTaxa": [
+        {
+          "taxonCode": "struth1",
+          "category": "family",
+          "taxonOrder": 1.0,
+          "sciName": "Struthionidae",
+          "comName": "Ostriches",
+          "cnName": "测试科",
+          "subTaxa": [
+            {
+              "taxonCode": "ostric2",
+              "category": "species",
+              "taxonOrder": 2.0,
+              "sciName": "Struthio camelus",
+              "comName": "goldcrest",
+              "cnName": "戴菊",
+              "iucnStatus": "lc",
+              "illusAssetId": "151455631",
+              "assetId": 151455781
+            },
+            {
+              "taxonCode": "ostric3",
+              "category": "species",
+              "taxonOrder": 7.0,
+              "sciName": "Struthio molybdophanes",
+              "comName": "somali Ostrich",
+              "iucnStatus": "vu",
+              "illusAssetId": "151455661",
+              "assetId": 151455791
+            },
+            {
+              "taxonCode": "ostric2",
+              "category": "species",
+              "taxonOrder": 2.0,
+              "sciName": "Struthio camelus",
+              "comName": "goldcrest",
+              "iucnStatus": "lc",
+              "illusAssetId": "151455631",
+              "assetId": 151455781
+            },
+            {
+              "taxonCode": "ostric3",
+              "category": "species",
+              "taxonOrder": 7.0,
+              "sciName": "Struthio molybdophanes",
+              "comName": "Somali Ostrich",
+              "iucnStatus": "vu",
+              "illusAssetId": "151455661",
+              "assetId": 151455791
+            },
+            {
+              "taxonCode": "ostric2",
+              "category": "species",
+              "taxonOrder": 2.0,
+              "sciName": "Struthio camelus",
+              "comName": "goldcrest",
+              "iucnStatus": "lc",
+              "illusAssetId": "151455631",
+              "assetId": 151455781
+            },
+            {
+              "taxonCode": "ostric3",
+              "category": "species",
+              "taxonOrder": 7.0,
+              "sciName": "Struthio molybdophanes",
+              "comName": "Somali Ostrich",
+              "iucnStatus": "vu",
+              "illusAssetId": "151455661",
+              "assetId": 151455791
+            },
+            {
+              "taxonCode": "ostric2",
+              "category": "species",
+              "taxonOrder": 2.0,
+              "sciName": "Struthio camelus",
+              "comName": "goldcrest",
+              "iucnStatus": "lc",
+              "illusAssetId": "151455631",
+              "assetId": 151455781
+            },
+            {
+              "taxonCode": "ostric3",
+              "category": "species",
+              "taxonOrder": 7.0,
+              "sciName": "Struthio molybdophanes",
+              "comName": "Somali Ostrich",
+              "iucnStatus": "vu",
+              "illusAssetId": "151455661",
+              "assetId": 151455791
+            },
+            {
+              "taxonCode": "ostric2",
+              "category": "species",
+              "taxonOrder": 2.0,
+              "sciName": "Struthio camelus",
+              "comName": "goldcrest",
+              "iucnStatus": "lc",
+              "illusAssetId": "151455631",
+              "assetId": 151455781
+            },
+            {
+              "taxonCode": "ostric3",
+              "category": "species",
+              "taxonOrder": 7.0,
+              "sciName": "Struthio molybdophanes",
+              "comName": "Somali Ostrich",
+              "iucnStatus": "vu",
+              "illusAssetId": "151455661",
+              "assetId": 151455791
+            }
+          ]
+        },
+        {
+          "taxonCode": "struth1",
+          "category": "family",
+          "taxonOrder": 1.0,
+          "sciName": "NewOrder",
+          "comName": "NewOrder",
+          "cnName": "测试科2",
+          "subTaxa": []
+        }
+      ]
+    },
+    {
+      "taxonCode": "regulus",
+      "category": "order",
+      "sciName": "Regulus",
+      "comName": "Regulus",
+      "cnName": "测试目2",
+      "subTaxa": []
+    }
+  ]
+}

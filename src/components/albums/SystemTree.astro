@@ -1,0 +1,113 @@
+---
+export interface Props {
+  tree: TreeNode;
+}
+
+interface TreeNode {
+  taxonCode: string;
+  category: string;
+  taxonOrder: number;
+  sciName: string;
+  comName: string;
+  cnName: string;
+  iucnStatus: string;
+  illusAssetId: string;
+  missingFromEbird: boolean;
+  assetId: number;
+  subTaxa?: TreeNode[];
+}
+
+const { tree } = Astro.props;
+---
+
+{
+  tree.category === "class" ? (
+    <div class="class-item">
+      <ul class="order-list">
+        {tree.subTaxa && tree.subTaxa.length != 0
+          ? tree.subTaxa.map(taxa => <Astro.self tree={taxa} />)
+          : null}
+      </ul>
+    </div>
+  ) : tree.category === "order" ? (
+    <li class="order-item">
+      <div class="order-info-box flex flex-row items-center bg-skin-card-muted p-3">
+        <p class="order-common-name text-xl font-bold uppercase">
+          {tree.comName}
+        </p>
+        <p class="order-cn-name ml-12 text-xl italic text-skin-accent">
+          {tree.cnName}
+        </p>
+      </div>
+      <ul class="family-list">
+        {tree.subTaxa && tree.subTaxa.length != 0
+          ? tree.subTaxa.map(taxa => <Astro.self tree={taxa} />)
+          : null}
+      </ul>
+    </li>
+  ) : tree.category === "family" ? (
+    <details class="family-item">
+      <summary class="family-info-box flex items-center bg-skin-card p-1">
+        <div class="family-info-line ml-3 flex flex-col">
+          <p class="family-common-name text-xl font-black">{tree.comName}</p>
+          <p class="family-latin-name text-l italic">{tree.sciName}</p>
+        </div>
+        <p class="family-cn-name ml-12 text-xl italic text-skin-accent">
+          {tree.cnName}
+        </p>
+      </summary>
+      <ul class="species-list flex flex-wrap items-start">
+        {tree.subTaxa && tree.subTaxa.length != 0
+          ? tree.subTaxa.map(taxa => <Astro.self tree={taxa} />)
+          : null}
+      </ul>
+    </details>
+  ) : (
+    <li class="species-item m-1 box-border h-48 w-48 bg-skin-card-muted transition-transform hover:scale-105">
+      <div class="top-background h-32 w-48 bg-white p-3">
+        <div
+          class="iucn-status w-8 rounded-full bg-red-500 text-center align-middle"
+          data-iucn={tree.iucnStatus}
+        >
+          <p class="iucn-text font-bold uppercase">{tree.iucnStatus}</p>
+        </div>
+        <img
+          class="species-image mx-auto block h-20"
+          data-image-lazy="true"
+          src={`https://cdn.download.ams.birds.cornell.edu/api/v1/asset/${tree.assetId}/160`}
+          data-image-loaded="true"
+          alt={tree.comName}
+        />
+      </div>
+      <div class="text-box flex flex-col">
+        <a
+          class="species-common-name hover:text-gray-600"
+          href={`albums/${tree.comName.replace(" ", "").toLowerCase()}`}
+        >
+          {tree.comName}
+        </a>
+        <a
+          class="species-cn-name hover:text-gray-600"
+          href={`albums/${tree.comName.replace(" ", "").toLowerCase()}`}
+        >
+          {tree.cnName}
+        </a>
+        <p class="species-latin-name text-xs italic">{tree.sciName}</p>
+      </div>
+
+      {tree.subTaxa && tree.subTaxa.length != 0
+        ? tree.subTaxa.map(taxa => <Astro.self tree={taxa} />)
+        : null}
+    </li>
+  )
+}
+
+<style>
+  .iucn-status[data-iucn="lc"] {
+    background-color: #ff000092;
+  }
+
+  .iucn-status[data-iucn="vu"] {
+    background-color: #7bd24c;
+  }
+</style>
